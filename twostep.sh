@@ -15,9 +15,10 @@ bioformats2raw --series $series $path .raw --progress --target-min-size 512
 
 echo ""
 echo "Cleaning up OME-XML"
-python clean_ome.py '.raw/OME/METADATA.ome.xml' > '.raw/OME/METADATA_NEW.ome.xml'
-rm  '.raw/OME/METADATA.ome.xml'
-mv  '.raw/OME/METADATA_NEW.ome.xml' '.raw/OME/METADATA.ome.xml'
+tmpfile=$(mktemp)
+python clean_ome.py '.raw/OME/METADATA.ome.xml' > ${tmpfile}
+cat ${tmpfile} > '.raw/OME/METADATA.ome.xml'
+rm -f ${tmpfile}
 
 echo ""
 echo "Converting OME-Zarr to OME-TIFF"
