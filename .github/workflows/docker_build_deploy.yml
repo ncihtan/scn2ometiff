@@ -43,4 +43,4 @@ jobs:
             quay.io/adamjtaylor/scn2ometiff:latest
           platforms: |
             linux/amd64
-            limux/arm64
+            linux/arm64
