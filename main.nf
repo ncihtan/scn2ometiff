@@ -2,9 +2,6 @@
 
 nextflow.enable.dsl=2
 
-docker.enable = true
-process.container 'adamjtaylor/scn2ometiff'
-
 params.input = 'BPC-20-NC-2405-002.scn'
 params.outDir = 'outputs'
 
@@ -35,7 +32,6 @@ process bioformats2raw {
 }
 
 process clean_ome {
-    container 'twostep'
     input:
       path raw
 
