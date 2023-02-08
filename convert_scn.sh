@@ -1,4 +1,3 @@
-#!/bin/bash
 path=$1
 
 series_count=$(tiffcomment $path| grep -c '</image>')
