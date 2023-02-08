@@ -24,3 +24,14 @@ bash convert_scn.sh input.scn
 Outputs:
 - `inputs-scene1.ome.tiff`
 - `inputs-scene2.ome.tiff`
+
+
+## Nextflow usage
+
+There is also a Nextflow pipeline for reproducible and contanarised conversion of scn files
+
+To convert all `.scn` files in the `input` directory and output into the `output` directory run:
+
+```
+nextflow run adamjtaylor/scn2ometiff -r nf --input input/*.scn --output output
+```
