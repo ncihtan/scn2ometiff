@@ -1,3 +1,5 @@
+#!/usr/bin/ python
+
 from ome_types import from_xml, to_xml
 import sys
 from xml.etree import ElementTree as ET
