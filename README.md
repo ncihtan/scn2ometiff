@@ -8,7 +8,7 @@ JPEG compression us used but this could be changed in `twosteps.sh`
 
 ## Requirements
 
-- `bioformats2raw>=0.5` - this is in thr `ome` Anaconda channel but not for arm-64. If on a Apple Silicon Mac you may need to specify a x86 conda env or install from Github
+- `bioformats2raw>=0.5` - this is in the `ome` Anaconda channel but not for arm-64. If on a Apple Silicon Mac you may need to specify a x86 conda env or install from Github
 - `raw2ometiff>=0.4` - this is not on the `ome` Anaconda channel yet so will need to be installed from Github and added to your path.
 - `Python >=3.7`
 - `ome_types` - Installable on pip
@@ -25,8 +25,19 @@ Outputs:
 - `inputs-scene1.ome.tiff`
 - `inputs-scene2.ome.tiff`
 
+## Docker usage
+
+A docker container with prereqiisites on Dockerhub (adamjtaylor/scn2ometiff) and quay.io (quay.io/adamjtaylor/scn2ometiff)
+
+Use as follows, mounting the directory with the input images into the container
+
+```
+docker run -it --rm -v <local-dir>:/data adamjtaylor/scn2ometiff /bin/bash -c "/convert_scn.sh /data/<image-to-convert>.scn"
+```
 
 ## Nextflow usage
+
+#### :warning: In development :warning: May not be functional
 
 There is also a Nextflow pipeline for reproducible and contanarised conversion of scn files
 
