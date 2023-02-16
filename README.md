@@ -48,5 +48,5 @@ There is also a Nextflow pipeline for reproducible and contanarised conversion o
 To convert all `.scn` files in the `input` directory and output into the `output` directory run:
 
 ```
-nextflow run adamjtaylor/scn2ometiff -r nf --input input/*.scn --output output
+nextflow run ncihtan/scn2ometiff -r nf --input input/*.scn --output output
 ```
