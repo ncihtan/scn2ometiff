@@ -16,7 +16,7 @@ bioformats2raw --series $series $path .raw --progress --target-min-size 512
 echo ""
 echo "Cleaning up OME-XML"
 tmpfile=$(mktemp)
-clean_ome.py '.raw/OME/METADATA.ome.xml' > ${tmpfile}
+python clean_ome.py '.raw/OME/METADATA.ome.xml' > ${tmpfile}
 cat ${tmpfile} > '.raw/OME/METADATA.ome.xml'
 rm -f ${tmpfile}
 
