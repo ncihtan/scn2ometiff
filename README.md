@@ -37,6 +37,8 @@ docker run -it --rm \
   /bin/bash -c "/convert_scn.sh /data/<image-to-convert>.scn"
 ```
 
+There may be warnings about container architecure and OpenCV
+
 ## Nextflow usage
 
 #### :warning: In development :warning: May not be functional
