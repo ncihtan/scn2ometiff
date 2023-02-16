@@ -21,20 +21,20 @@ RUN apt-get update && apt-get install -y \
     openjdk-11-jdk-headless \
     g++ \
     python3-opencv
-RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-RUN python3 /tmp/get-pip.py
-RUN wget https://github.com/glencoesoftware/bioformats2raw/releases/download/v0.6.0/bioformats2raw-0.6.0.zip -O /tmp/bioformats2raw.zip
-RUN unzip /tmp/bioformats2raw*.zip -d /opt
-RUN rm -rf /tmp/bioformats2raw*
-RUN ln -s /opt/bioformats2raw*/bin/bioformats2raw /usr/bin/bioformats2raw
-RUN wget https://github.com/glencoesoftware/raw2ometiff/releases/download/v0.4.0/raw2ometiff-0.4.0.zip -O /tmp/raw2ometiff.zip
-RUN unzip /tmp/raw2ometiff*.zip -d /opt
-RUN rm -rf /tmp/raw2ometiff*
-RUN ln -s /opt/raw2ometiff*/bin/raw2ometiff /usr/bin/raw2ometiff
-RUN wget http://downloads.openmicroscopy.org/latest/bio-formats5.6/artifacts/bftools.zip -O /tmp/bftools.zip
-RUN unzip /tmp/bftools.zip -d /opt
-RUN rm -rf /tmp/bftools
-RUN ln -s /opt/bftools /usr/bin/bftools
+RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py && \
+    python3 /tmp/get-pip.py
+RUN wget https://github.com/glencoesoftware/bioformats2raw/releases/download/v0.6.0/bioformats2raw-0.6.0.zip -O /tmp/bioformats2raw.zip && \
+    unzip /tmp/bioformats2raw*.zip -d /opt && \
+    rm -rf /tmp/bioformats2raw* && \
+    ln -s /opt/bioformats2raw*/bin/bioformats2raw /usr/bin/bioformats2raw
+RUN wget https://github.com/glencoesoftware/raw2ometiff/releases/download/v0.4.0/raw2ometiff-0.4.0.zip -O /tmp/raw2ometiff.zip && \
+    unzip /tmp/raw2ometiff*.zip -d /opt && \
+    m -rf /tmp/raw2ometiff* && \
+    ln -s /opt/raw2ometiff*/bin/raw2ometiff /usr/bin/raw2ometiff
+RUN wget http://downloads.openmicroscopy.org/latest/bio-formats5.6/artifacts/bftools.zip -O /tmp/bftools.zip && \
+    unzip /tmp/bftools.zip -d /opt && \
+    rm -rf /tmp/bftools && \
+    ln -s /opt/bftools /usr/bin/bftools
 ENV PATH="$PATH:/usr/bin/bftools"
 
 COPY bin/twostep.sh /twostep.sh
