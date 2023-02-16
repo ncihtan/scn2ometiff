@@ -32,7 +32,9 @@ A docker container with prereqiisites on Dockerhub (adamjtaylor/scn2ometiff) and
 Use as follows, mounting the directory with the input images into the container
 
 ```
-docker run -it --rm -v <local-dir>:/data adamjtaylor/scn2ometiff /bin/bash -c "/convert_scn.sh /data/<image-to-convert>.scn"
+docker run -it --rm \
+  -v <local-dir>:/data adamjtaylor/scn2ometiff \
+  /bin/bash -c "/convert_scn.sh /data/<image-to-convert>.scn"
 ```
 
 ## Nextflow usage
