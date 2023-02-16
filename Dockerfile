@@ -13,12 +13,13 @@ RUN apt-get update && apt-get install -y \
     libjpeg-turbo8 \
     libpng16-16 \
     libtinyxml2.6.2v5 \
-    python3 \
+    python3.10 \
     python3-setuptools \
     unzip \
     python3-dev \
     openjdk-11-jdk-headless \
-    g++
+    g++ \
+    python3-opencv
 RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 RUN python3 /tmp/get-pip.py
 RUN wget https://github.com/glencoesoftware/bioformats2raw/releases/download/v0.6.0/bioformats2raw-0.6.0.zip -O /tmp/bioformats2raw.zip
